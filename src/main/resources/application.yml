@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+#配置数据源
+spring:
+  datasource:
+     url: jdbc:mysql://127.0.0.1:3306/retail_db?useUnicode=true&characterEncoding=utf8
+     username: retail_u
+     password: retail_PWD_123
+     driver-class-name: com.mysql.jdbc.Driver
