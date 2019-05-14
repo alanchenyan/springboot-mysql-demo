@@ -8,3 +8,6 @@ spring:
      username: retail_u
      password: retail_PWD_123
      driver-class-name: com.mysql.jdbc.Driver
+#指定mybatis映射文件的地址
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
