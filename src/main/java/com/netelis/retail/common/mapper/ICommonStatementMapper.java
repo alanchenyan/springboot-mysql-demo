@@ -1,4 +1,4 @@
-package com.netelis.retail.common.service;
+package com.netelis.retail.common.mapper;
 
 import java.util.List;
 
@@ -7,7 +7,8 @@ import java.util.List;
  * @description
  * @date 2019/5/15
  */
-public interface ICommonService {
+public interface ICommonStatementMapper {
 
     List selectList(String statement, Object parameter);
+
 }

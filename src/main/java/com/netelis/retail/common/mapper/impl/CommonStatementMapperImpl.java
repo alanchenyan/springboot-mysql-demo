@@ -1,11 +1,11 @@
-package com.netelis.retail.common.service.impl;
+package com.netelis.retail.common.mapper.impl;
 
-import com.netelis.retail.common.service.ICommonService;
+import com.netelis.retail.common.mapper.ICommonStatementMapper;
 import com.netelis.retail.config.SqlSessionConfig;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -14,8 +14,9 @@ import java.util.List;
  * @description
  * @date 2019/5/15
  */
-@Service
-public class CommonServiceImpl implements ICommonService {
+@Component
+public class CommonStatementMapperImpl implements ICommonStatementMapper {
+
     @Autowired
     SqlSessionConfig sqlSessionConfig;
 

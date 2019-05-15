@@ -1,6 +1,6 @@
 package com.netelis.retail.web.account.controller;
 
-import com.netelis.retail.common.service.ICommonService;
+import com.netelis.retail.common.service.ICommonStatementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import java.util.List;
 public class CommonStatementController {
 
     @Autowired
-    ICommonService CommonServiceImpl;
+    ICommonStatementService CommonServiceImpl;
 
 
     @GetMapping("/getlist")

@@ -34,15 +34,27 @@ public class SqlSessionConfig {
     @Value("${mybatis.mapper-locations}")
     private String mapperLocations;
 
+    @Value("${mybatis.configuration.map-underscore-to-camel-case}")
+    private boolean mapUnderscoreToCamelCase;
+
+
     @Bean
     public SqlSessionFactoryBean createSqlSessionFactory() {
         SqlSessionFactoryBean sqlSessionFactoryBean = null;
         try {
             DataSource dataSource = new PooledDataSource(driverClassName, url, username, password);
+
             sqlSessionFactoryBean = new SqlSessionFactoryBean();
             sqlSessionFactoryBean.setDataSource(dataSource);
+
             PathMatchingResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+
             sqlSessionFactoryBean.setMapperLocations(resourcePatternResolver.getResources(mapperLocations));
+
+            org.apache.ibatis.session.Configuration configuration = sqlSessionFactoryBean.getObject().getConfiguration();
+            configuration.setMapUnderscoreToCamelCase(mapUnderscoreToCamelCase); //设置驼峰匹配规则
+            sqlSessionFactoryBean.setConfiguration(configuration);
+
         } catch (Exception e) {
             logger.error("创建SqlSession连接工厂错误：{}", e);
         }
