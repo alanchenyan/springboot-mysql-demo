@@ -35,4 +35,12 @@ public class UserController {
         return userServiceImpl.findByName(name);
     }
 
+    @GetMapping("/findlogin")
+    public List findLoginByName(@RequestParam(required = true) String name) {
+        System.out.println("findLoginByName.............");
+        return userServiceImpl.findLoginByName(name);
+    }
+
+
+
 }

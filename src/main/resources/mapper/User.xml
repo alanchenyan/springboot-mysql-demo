@@ -5,6 +5,10 @@
         select * from t_user where user_name = #{name}
     </select>
 
+    <select id="findLoginByName" parameterType="String" resultType="com.netelis.retail.entiy.User">
+        select user_name,password from t_user where user_name = #{name}
+    </select>
+
     <insert id="insert" parameterType="com.netelis.retail.entiy.User" useGeneratedKeys="true" keyProperty="userId">
         insert into t_user(user_name,password,phone) values(#{userName},#{password},#{phone})
     </insert>

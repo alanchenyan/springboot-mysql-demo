@@ -17,4 +17,6 @@ public interface UserDao {
 
     List findByName(String name);
 
+    List findLoginByName(String name);
+
 }

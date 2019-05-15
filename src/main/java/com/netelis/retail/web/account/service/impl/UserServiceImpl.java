@@ -27,4 +27,9 @@ public class UserServiceImpl implements IUserService {
     public List findByName(String name) {
         return userDao.findByName(name);
     }
+
+    @Override
+    public List findLoginByName(String name){
+        return userDao.findLoginByName(name);
+    }
 }

@@ -14,4 +14,7 @@ public interface IUserService {
     int insert(User user);
 
     List findByName(String name);
+
+    List findLoginByName(String name);
+
 }
