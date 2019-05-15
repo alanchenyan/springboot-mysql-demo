@@ -28,4 +28,12 @@ public class StatementVO {
     public void setParameter(Object parameter) {
         this.parameter = parameter;
     }
+
+    @Override
+    public String toString() {
+        return "StatementVO{" +
+                "statement='" + statement + '\'' +
+                ", parameter=" + parameter +
+                '}';
+    }
 }
