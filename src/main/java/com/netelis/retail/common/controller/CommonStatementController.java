@@ -1,4 +1,4 @@
-package com.netelis.retail.web.account.controller;
+package com.netelis.retail.common.controller;
 
 import com.netelis.retail.common.service.ICommonStatementService;
 import org.springframework.beans.factory.annotation.Autowired;
