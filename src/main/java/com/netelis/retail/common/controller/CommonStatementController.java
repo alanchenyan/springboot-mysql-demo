@@ -19,10 +19,21 @@ public class CommonStatementController {
     @Autowired
     ICommonStatementService CommonServiceImpl;
 
+    @GetMapping("/list")
+    public List list(String statement,String parameter) {
+        System.out.println("commonstatement list............."+statement+"  "+parameter);
+        return CommonServiceImpl.selectList(statement,parameter);
+    }
 
     @PostMapping("/list")
-    public List getUser(@RequestBody StatementVO statementVO) {
+    public List list(@RequestBody StatementVO statementVO) {
         System.out.println("commonstatement list............."+statementVO);
         return CommonServiceImpl.selectList(statementVO.getStatement(),statementVO.getParameter());
+    }
+
+    @PostMapping
+    public int add(@RequestBody StatementVO statementVO) {
+        System.out.println("commonstatement add............."+statementVO);
+        return CommonServiceImpl.insert(statementVO.getStatement(),statementVO.getParameter());
     }
 }

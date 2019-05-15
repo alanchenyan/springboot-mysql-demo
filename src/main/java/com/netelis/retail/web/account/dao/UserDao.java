@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-    int insert(User user);
+    int insertUser(User user);
 
     List findUser(UserSearch userSearch);
 

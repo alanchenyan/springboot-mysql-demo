@@ -22,4 +22,9 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
     public List selectList(String statement, Object parameter){
         return commonStatementMapperImpl.selectList(statement,parameter);
     }
+
+    @Override
+    public int insert(String statement, Object parameter){
+        return commonStatementMapperImpl.insert(statement,parameter);
+    }
 }

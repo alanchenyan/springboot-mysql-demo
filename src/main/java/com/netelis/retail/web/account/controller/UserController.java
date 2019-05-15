@@ -28,7 +28,7 @@ public class UserController {
         user.setUserName("AC");
         user.setPhone("13417810161");
         user.setPassword("alanchen123");
-        return userServiceImpl.insert(user);
+        return userServiceImpl.insertUser(user);
     }
 
     @GetMapping
@@ -38,8 +38,8 @@ public class UserController {
     }
 
     @GetMapping("/findlogin")
-    public List findLoginByName(@RequestParam(required = true) String name) {
+    public List findLoginByName(@RequestParam(required = true) String parameter) {
         System.out.println("findLoginByName.............");
-        return userServiceImpl.findLoginByName(name);
+        return userServiceImpl.findLoginByName(parameter);
     }
 }

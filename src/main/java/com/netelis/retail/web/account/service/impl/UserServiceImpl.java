@@ -20,8 +20,8 @@ public class UserServiceImpl implements IUserService {
     private UserDao userDao;
 
     @Override
-    public int insert(User user) {
-        return userDao.insert(user);
+    public int insertUser(User user) {
+        return userDao.insertUser(user);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List findLoginByName(String name){
-        return userDao.findLoginByName(name);
+    public List findLoginByName(String parameter){
+        return userDao.findLoginByName(parameter);
     }
 }

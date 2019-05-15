@@ -10,4 +10,6 @@ import java.util.List;
 public interface ICommonStatementService {
 
     List selectList(String statement, Object parameter);
+
+    int insert(String statement, Object parameter);
 }

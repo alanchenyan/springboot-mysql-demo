@@ -36,4 +36,21 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
         }
         return list;
     }
+
+    @Override
+    public int insert(String statement, Object parameter){
+        int id = 0;
+        SqlSession session = null;
+        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
+        try {
+            session = factory.getObject().openSession();
+            id = session.insert(statement,parameter);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return id;
+    }
 }
