@@ -1,10 +1,10 @@
 package com.netelis.retail.common.controller;
 
 import com.netelis.retail.common.service.ICommonStatementService;
+import com.netelis.retail.common.vo.StatementVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,9 +22,10 @@ public class CommonStatementController {
     ICommonStatementService CommonServiceImpl;
 
 
+    //getUser(@RequestParam(required = true) String statement,@RequestParam Object parameter)
     @GetMapping("/getlist")
-    public List getUser(@RequestParam(required = true) String statement,@RequestParam(required = true) String name) {
+    public List getUser(StatementVO statementVO) {
         System.out.println("commonstatement getlist.............");
-        return CommonServiceImpl.selectList(statement,name);
+        return CommonServiceImpl.selectList(statementVO.getStatement(),statementVO.getParameter());
     }
 }

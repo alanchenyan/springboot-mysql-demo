@@ -2,6 +2,7 @@ package com.netelis.retail.web.account.service.impl;
 
 import com.netelis.retail.entiy.User;
 import com.netelis.retail.web.account.dao.UserDao;
+import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List findByName(String name) {
-        return userDao.findByName(name);
+    public List findUser(UserSearch userSearch) {
+        return userDao.findUser(userSearch);
     }
 
     @Override

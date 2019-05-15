@@ -1,6 +1,7 @@
 package com.netelis.retail.web.account.controller;
 
 import com.netelis.retail.entiy.User;
+import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -31,9 +32,9 @@ public class UserController {
     }
 
     @GetMapping
-    public List getUser(@RequestParam(required = true) String name) {
+    public List getUser(UserSearch userSearch) {
         System.out.println("getUser.............");
-        return userServiceImpl.findByName(name);
+        return userServiceImpl.findUser(userSearch);
     }
 
     @GetMapping("/findlogin")

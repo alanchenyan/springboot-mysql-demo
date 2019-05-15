@@ -1,6 +1,7 @@
 package com.netelis.retail.web.account.service;
 
 import com.netelis.retail.entiy.User;
+import com.netelis.retail.web.account.search.UserSearch;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface IUserService {
 
     int insert(User user);
 
-    List findByName(String name);
+    List findUser(UserSearch userSearch);
 
     List findLoginByName(String name);
 
