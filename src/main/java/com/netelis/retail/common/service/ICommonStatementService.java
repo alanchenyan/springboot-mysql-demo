@@ -1,5 +1,7 @@
 package com.netelis.retail.common.service;
 
+import com.netelis.retail.entiy.BaseEntity;
+
 import java.util.List;
 
 /**
@@ -11,5 +13,5 @@ public interface ICommonStatementService {
 
     List selectList(String statement, Object parameter);
 
-    int insert(String statement, Object parameter);
+    Long insert(String statement, Object entity);
 }

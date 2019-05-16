@@ -1,17 +1,17 @@
 package com.netelis.retail.common.vo;
 
-import org.springframework.web.bind.annotation.RequestParam;
+import com.netelis.retail.entiy.BaseEntity;
 
 /**
  * @author Alan Chen
  * @description
  * @date 2019/5/15
  */
-public class StatementVO {
+public class StatementEditVO {
 
     private String statement;
 
-    private Object parameter;
+    private Object entity;
 
     public String getStatement() {
         return statement;
@@ -21,19 +21,19 @@ public class StatementVO {
         this.statement = statement;
     }
 
-    public Object getParameter() {
-        return parameter;
+    public Object getEntity() {
+        return entity;
     }
 
-    public void setParameter(Object parameter) {
-        this.parameter = parameter;
+    public void setEntity(Object entity) {
+        this.entity = entity;
     }
 
     @Override
     public String toString() {
-        return "StatementVO{" +
+        return "StatementEditVO{" +
                 "statement='" + statement + '\'' +
-                ", parameter=" + parameter +
+                ", entity=" + entity +
                 '}';
     }
 }

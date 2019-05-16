@@ -18,7 +18,7 @@
         select user_name,password from t_user where user_name = #{parameter}
     </select>
 
-    <insert id="insertUser" parameterType="com.netelis.retail.entiy.User" useGeneratedKeys="true" keyProperty="userId">
+    <insert id="insertUser" parameterType="com.netelis.retail.entiy.User" useGeneratedKeys="true" keyProperty="id">
         insert into t_user(user_name,password,phone) values(#{userName},#{password},#{phone})
     </insert>
 </mapper>

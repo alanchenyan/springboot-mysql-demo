@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -38,19 +39,31 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
     }
 
     @Override
-    public int insert(String statement, Object parameter){
-        int id = 0;
+    public Long insert(String statement, Object entity){
+        Long keyId = null;
+        int  affectedRowsNum = 0;
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
         try {
             session = factory.getObject().openSession();
-            id = session.insert(statement,parameter);
+            affectedRowsNum = session.insert(statement,entity);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.close();
         }
-        return id;
+
+        if(affectedRowsNum == 1){
+            if(entity instanceof  LinkedHashMap){
+                LinkedHashMap  beanMap = (LinkedHashMap) entity;
+                Object obj = beanMap.get("id");
+                if(obj !=null && obj instanceof Long){
+                    keyId = (Long) obj;
+                }
+            }
+        }
+        return keyId;
     }
+
 }

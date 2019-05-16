@@ -5,23 +5,13 @@ package com.netelis.retail.entiy;
  * @description
  * @date 2019/5/14
  */
-public class User {
-
-    private Integer userId;
+public class User extends BaseEntity{
 
     private String userName;
 
     private String password;
 
     private String phone;
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 
     public String getUserName() {
         return userName;

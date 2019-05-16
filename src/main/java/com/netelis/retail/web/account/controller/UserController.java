@@ -23,11 +23,7 @@ public class UserController {
     private IUserService userServiceImpl;
 
     @PostMapping
-    public int save() {
-        User user = new User();
-        user.setUserName("AC");
-        user.setPhone("13417810161");
-        user.setPassword("alanchen123");
+    public int save(@RequestBody User user) {
         return userServiceImpl.insertUser(user);
     }
 

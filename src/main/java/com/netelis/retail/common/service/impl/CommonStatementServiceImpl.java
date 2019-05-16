@@ -4,6 +4,7 @@ import com.netelis.retail.common.mapper.ICommonStatementMapper;
 import com.netelis.retail.common.service.ICommonStatementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,8 +24,9 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
         return commonStatementMapperImpl.selectList(statement,parameter);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public int insert(String statement, Object parameter){
-        return commonStatementMapperImpl.insert(statement,parameter);
+    public Long insert(String statement, Object entity){
+        return commonStatementMapperImpl.insert(statement,entity);
     }
 }

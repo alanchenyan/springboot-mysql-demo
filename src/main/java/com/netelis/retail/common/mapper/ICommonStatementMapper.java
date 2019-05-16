@@ -11,6 +11,6 @@ public interface ICommonStatementMapper {
 
     List selectList(String statement, Object parameter);
 
-    int insert(String statement, Object parameter);
+    Long insert(String statement, Object entity);
 
 }

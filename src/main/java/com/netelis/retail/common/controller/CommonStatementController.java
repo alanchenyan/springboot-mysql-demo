@@ -1,7 +1,8 @@
 package com.netelis.retail.common.controller;
 
 import com.netelis.retail.common.service.ICommonStatementService;
-import com.netelis.retail.common.vo.StatementVO;
+import com.netelis.retail.common.vo.StatementEditVO;
+import com.netelis.retail.common.vo.StatementSearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,14 +27,14 @@ public class CommonStatementController {
     }
 
     @PostMapping("/list")
-    public List list(@RequestBody StatementVO statementVO) {
+    public List list(@RequestBody StatementSearchVO statementVO) {
         System.out.println("commonstatement list............."+statementVO);
         return CommonServiceImpl.selectList(statementVO.getStatement(),statementVO.getParameter());
     }
 
     @PostMapping
-    public int add(@RequestBody StatementVO statementVO) {
-        System.out.println("commonstatement add............."+statementVO);
-        return CommonServiceImpl.insert(statementVO.getStatement(),statementVO.getParameter());
+    public Long add(@RequestBody StatementEditVO statementEditVO) {
+        System.out.println("commonstatement add............."+statementEditVO);
+        return CommonServiceImpl.insert(statementEditVO.getStatement(),statementEditVO.getEntity());
     }
 }
