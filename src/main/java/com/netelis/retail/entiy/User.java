@@ -7,10 +7,13 @@ package com.netelis.retail.entiy;
  */
 public class User extends BaseEntity{
 
+    //用户名
     private String userName;
 
+    //用户密码
     private String password;
 
+    //用户电话
     private String phone;
 
     public String getUserName() {
