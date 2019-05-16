@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2019/5/14
  */
 @Mapper
-public interface UserDao {
+public interface UserMapper {
 
     int insertUser(User user);
 

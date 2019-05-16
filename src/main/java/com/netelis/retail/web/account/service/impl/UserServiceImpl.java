@@ -1,7 +1,7 @@
 package com.netelis.retail.web.account.service.impl;
 
 import com.netelis.retail.entiy.User;
-import com.netelis.retail.web.account.dao.UserDao;
+import com.netelis.retail.web.account.dao.UserMapper;
 import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
-    private UserDao userDao;
+    private UserMapper userDao;
 
     @Override
     public int insertUser(User user) {
