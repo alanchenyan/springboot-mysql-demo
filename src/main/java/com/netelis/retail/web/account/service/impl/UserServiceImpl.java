@@ -1,5 +1,6 @@
 package com.netelis.retail.web.account.service.impl;
 
+import com.netelis.retail.common.mapper.ICommonStatementMapper;
 import com.netelis.retail.entiy.User;
 import com.netelis.retail.web.account.dao.UserMapper;
 import com.netelis.retail.web.account.search.UserSearch;
@@ -17,20 +18,23 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
-    private UserMapper userDao;
+    private UserMapper userMapper;
+    @Autowired
+    ICommonStatementMapper commonStatementMapperImpl;
 
     @Override
-    public int insertUser(User user) {
-        return userDao.insertUser(user);
+    public String insertUser(User user) {
+        userMapper.insertUser(user);
+        return user.getKeyId();
     }
 
     @Override
     public List findUser(UserSearch userSearch) {
-        return userDao.findUser(userSearch);
+        return userMapper.findUser(userSearch);
     }
 
     @Override
-    public List findLoginByName(String parameter){
-        return userDao.findLoginByName(parameter);
+    public User getOneUser(String keyId){
+        return (User)commonStatementMapperImpl.selectOne("getOneUser",keyId);
     }
 }

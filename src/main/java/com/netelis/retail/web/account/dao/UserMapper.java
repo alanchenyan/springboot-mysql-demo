@@ -18,6 +18,5 @@ public interface UserMapper {
 
     List findUser(UserSearch userSearch);
 
-    List findLoginByName(String name);
-
+    User getOneUser(String keyId);
 }

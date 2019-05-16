@@ -12,10 +12,10 @@ import java.util.List;
  */
 public interface IUserService {
 
-    int insertUser(User user);
+    String insertUser(User user);
 
     List findUser(UserSearch userSearch);
 
-    List findLoginByName(String parameter);
+    User getOneUser(String keyId);
 
 }
