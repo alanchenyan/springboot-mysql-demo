@@ -87,6 +87,6 @@ public class CommonStatementController {
     @GetMapping("/{statement}/{keyId}")
     public Object getOneById(@PathVariable String statement, @PathVariable String keyId) {
         logger.debug("commonstatement getOneById.............statement:" + statement+"  keyId:"+keyId);
-        return commonServiceImpl.selectList(statement, keyId);
+        return commonServiceImpl.selectOne(statement, keyId);
     }
 }
