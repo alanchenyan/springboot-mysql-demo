@@ -9,12 +9,14 @@ import java.util.List;
  */
 public interface ICommonStatementMapper {
 
-    List selectList(String statement, Object parameter);
-
     String insert(String statement, Object entity);
 
     void update(String statement, Object entity);
 
     void delete(String statement, Object parameter);
+
+    List selectList(String statement, Object parameter);
+
+    Object selectOne(String statement, Object parameter);
 
 }

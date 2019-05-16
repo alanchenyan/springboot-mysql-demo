@@ -22,23 +22,6 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
     SqlSessionConfig sqlSessionConfig;
 
     @Override
-    public List selectList(String statement, Object parameter) {
-        List list = null;
-        SqlSession session = null;
-        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
-        try {
-            session = factory.getObject().openSession();
-            list = session.selectList(statement, parameter);
-            session.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return list;
-    }
-
-    @Override
     public String insert(String statement, Object entity) {
         String keyId = null;
         int affectedRowsNum = 0;
@@ -95,5 +78,41 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
             session.close();
         }
     }
+
+
+    @Override
+    public List selectList(String statement, Object parameter) {
+        List list = null;
+        SqlSession session = null;
+        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
+        try {
+            session = factory.getObject().openSession();
+            list = session.selectList(statement, parameter);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return list;
+    }
+
+    @Override
+    public Object selectOne(String statement, Object parameter){
+        Object result = null;
+        SqlSession session = null;
+        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
+        try {
+            session = factory.getObject().openSession();
+            result = session.selectOne(statement, parameter);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
 
 }

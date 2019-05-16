@@ -41,4 +41,8 @@
         select user_name,password from t_user where user_name = #{parameter}
     </select>
 
+    <select id="getOneUser" parameterType="String" resultType="com.netelis.retail.entiy.User">
+        select * from t_user where key_id = #{keyId}
+    </select>
+
 </mapper>

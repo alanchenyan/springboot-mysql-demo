@@ -19,11 +19,6 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
     @Autowired
     ICommonStatementMapper commonStatementMapperImpl;
 
-    @Override
-    public List selectList(String statement, Object parameter){
-        return commonStatementMapperImpl.selectList(statement,parameter);
-    }
-
     @Transactional(rollbackFor = Exception.class)
     @Override
     public String insert(String statement, Object entity){
@@ -39,13 +34,29 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void deleteById(String statement, Long id){
-        commonStatementMapperImpl.delete(statement,id);
+    public void deleteById(String statement, String keyId){
+        commonStatementMapperImpl.delete(statement,keyId);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void delete(String statement, Object entity){
         commonStatementMapperImpl.delete(statement,entity);
+    }
+
+
+    @Override
+    public List selectList(String statement, Object parameter){
+        return commonStatementMapperImpl.selectList(statement,parameter);
+    }
+
+    @Override
+    public Object selectOne(String statement, Object parameter){
+        return commonStatementMapperImpl.selectOne(statement,parameter);
+    }
+
+    @Override
+    public Object selectOne(String statement, String keyId){
+        return commonStatementMapperImpl.selectOne(statement,keyId);
     }
 }

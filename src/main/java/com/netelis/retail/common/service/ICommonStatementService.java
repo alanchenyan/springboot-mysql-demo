@@ -11,13 +11,17 @@ import java.util.List;
  */
 public interface ICommonStatementService {
 
-    List selectList(String statement, Object parameter);
-
     String insert(String statement, Object entity);
 
     void update(String statement, Object entity);
 
-    void deleteById(String statement, Long id);
+    void deleteById(String statement, String keyId);
 
     void delete(String statement, Object entity);
+
+    List selectList(String statement, Object parameter);
+
+    Object selectOne(String statement, Object parameter);
+
+    Object selectOne(String statement, String keyId);
 }
