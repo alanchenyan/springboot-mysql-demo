@@ -1,7 +1,7 @@
 package com.netelis.retail.web.account.service.impl;
 
-import com.netelis.retail.common.mapper.ICommonStatementMapper;
 import com.netelis.retail.entiy.User;
+import com.netelis.retail.rpc.statement.mapper.IRpcStatementMapper;
 import com.netelis.retail.web.account.dao.UserMapper;
 import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
@@ -20,7 +20,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
     @Autowired
-    ICommonStatementMapper commonStatementMapperImpl;
+    IRpcStatementMapper rpcStatementMapperImpl;
 
     @Override
     public String insertUser(User user) {
@@ -35,6 +35,6 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getOneUser(String keyId){
-        return (User)commonStatementMapperImpl.selectOne("getOneUser",keyId);
+        return (User)rpcStatementMapperImpl.selectOne("getOneUser",keyId);
     }
 }

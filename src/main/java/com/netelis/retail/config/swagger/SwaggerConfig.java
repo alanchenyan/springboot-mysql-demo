@@ -1,4 +1,4 @@
-package com.netelis.retail.config;
+package com.netelis.retail.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
