@@ -3,8 +3,13 @@
 server:
   port: 8080
 
-#配置数据源
+
 spring:
+  #swagger文档配置
+  swagger:
+    enabled: true
+
+  #配置数据源
   datasource:
      url: jdbc:mysql://127.0.0.1:3306/retail_db?useUnicode=true&characterEncoding=utf8
      username: retail_u
