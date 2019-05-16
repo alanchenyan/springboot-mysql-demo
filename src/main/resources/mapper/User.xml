@@ -16,6 +16,14 @@
         update t_user set user_name=#{userName},password=#{password},phone=#{phone} where key_id=#{keyId}
     </update>
 
+    <update id="disableUser" parameterType="String">
+        update t_user set deleted = 1 where key_id =#{keyId}
+    </update>
+
+    <update id="disableUserByParamter" parameterType="com.netelis.retail.web.account.search.UserSearch">
+        update t_user set deleted = 1 where user_name = #{userName} and phone = #{phone}
+    </update>
+
     <delete id="deleteUser" parameterType="String">
         delete from t_user where key_id=#{keyId}
     </delete>

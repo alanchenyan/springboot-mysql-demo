@@ -36,10 +36,21 @@ public class CommonStatementController {
         commonServiceImpl.update(statementEditVO.getStatement(), statementEditVO.getEntity());
     }
 
+    @PutMapping("/disable/{statement}/{keyId}")
+    public void disableById(@PathVariable String statement, @PathVariable String keyId) {
+        logger.debug("commonstatement disableById.............statement:" + statement+"  keyId"+keyId);
+        commonServiceImpl.disableById(statement, keyId);
+    }
+
+    @PutMapping("/disable")
+    public void disable(@RequestBody StatementEditVO statementEditVO) {
+        logger.debug("commonstatement disable............." + statementEditVO);
+        commonServiceImpl.disable(statementEditVO.getStatement(), statementEditVO.getEntity());
+    }
 
     @DeleteMapping("/{statement}/{keyId}")
     public void deleteById(@PathVariable String statement, @PathVariable String keyId) {
-        logger.debug("commonstatement deleteById............." + keyId);
+        logger.debug("commonstatement deleteById.............statement:" + statement+"  keyId"+keyId);
         commonServiceImpl.deleteById(statement, keyId);
     }
 
@@ -63,7 +74,7 @@ public class CommonStatementController {
 
     @GetMapping("/{statement}/{keyId}")
     public Object getOneById(@PathVariable String statement, @PathVariable String keyId) {
-        logger.debug("commonstatement getOneById............." + statement + "  " + keyId);
+        logger.debug("commonstatement getOneById.............statement:" + statement+"  keyId"+keyId);
         return commonServiceImpl.selectList(statement, keyId);
     }
 }

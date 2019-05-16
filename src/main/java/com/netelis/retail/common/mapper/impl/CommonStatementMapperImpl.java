@@ -40,7 +40,7 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
         if (affectedRowsNum == 1) {
             if (entity instanceof LinkedHashMap) {
                 LinkedHashMap beanMap = (LinkedHashMap) entity;
-                Object obj = beanMap.get("id");
+                Object obj = beanMap.get("keyId");
                 if (obj != null && obj instanceof String) {
                     keyId = (String) obj;
                 }
@@ -113,6 +113,5 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
         }
         return result;
     }
-
-
+    
 }
