@@ -113,5 +113,5 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
         }
         return result;
     }
-    
+
 }
