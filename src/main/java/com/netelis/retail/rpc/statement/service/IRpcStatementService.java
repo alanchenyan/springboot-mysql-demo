@@ -1,4 +1,4 @@
-package com.netelis.retail.common.service;
+package com.netelis.retail.rpc.statement.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import java.util.List;
  * @description
  * @date 2019/5/15
  */
-public interface ICommonStatementService {
+public interface IRpcStatementService {
 
     /**
      * 新增数据接口

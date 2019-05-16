@@ -1,4 +1,4 @@
-package com.netelis.retail.common.mapper;
+package com.netelis.retail.rpc.statement.mapper;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import java.util.List;
  * @description
  * @date 2019/5/15
  */
-public interface ICommonStatementMapper {
+public interface IRpcStatementMapper {
 
     /**
      * 新增数据接口

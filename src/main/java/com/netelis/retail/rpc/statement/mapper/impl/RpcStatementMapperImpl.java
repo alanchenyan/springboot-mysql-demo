@@ -1,11 +1,11 @@
-package com.netelis.retail.common.mapper.impl;
+package com.netelis.retail.rpc.statement.mapper.impl;
 
-import com.netelis.retail.common.mapper.ICommonStatementMapper;
-import com.netelis.retail.config.SqlSessionConfig;
+import com.netelis.retail.config.sqlsession.SqlSessionConfig;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.netelis.retail.rpc.statement.mapper.IRpcStatementMapper;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2019/5/15
  */
 @Component
-public class CommonStatementMapperImpl implements ICommonStatementMapper {
+public class RpcStatementMapperImpl implements IRpcStatementMapper {
 
     @Autowired
     SqlSessionConfig sqlSessionConfig;

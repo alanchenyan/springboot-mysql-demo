@@ -1,6 +1,4 @@
-package com.netelis.retail.common.vo;
-
-import com.netelis.retail.entiy.BaseEntity;
+package com.netelis.retail.rpc.statement.vo;
 
 /**
  * @author Alan Chen

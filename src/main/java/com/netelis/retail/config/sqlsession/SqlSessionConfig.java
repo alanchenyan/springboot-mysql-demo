@@ -1,4 +1,4 @@
-package com.netelis.retail.config;
+package com.netelis.retail.config.sqlsession;
 
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;

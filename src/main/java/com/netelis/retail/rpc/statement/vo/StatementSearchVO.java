@@ -1,6 +1,4 @@
-package com.netelis.retail.common.vo;
-
-import org.springframework.web.bind.annotation.RequestParam;
+package com.netelis.retail.rpc.statement.vo;
 
 /**
  * @author Alan Chen
