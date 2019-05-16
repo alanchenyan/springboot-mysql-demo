@@ -12,10 +12,25 @@ import java.util.List;
  */
 public interface IUserService {
 
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
     String insertUser(User user);
 
+    /**
+     * 查询用户
+     * @param userSearch
+     * @return
+     */
     List findUser(UserSearch userSearch);
 
+    /**
+     * 获取单个用户
+     * @param keyId
+     * @return
+     */
     User getOneUser(String keyId);
 
 }

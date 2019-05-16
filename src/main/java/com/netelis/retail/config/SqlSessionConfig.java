@@ -12,7 +12,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 /**
- * SqlSession配置
+ * @author Alan Chen
+ * @description SqlSession配置
+ * @date 2019/5/14
  */
 @Configuration
 public class SqlSessionConfig {
@@ -52,7 +54,8 @@ public class SqlSessionConfig {
             sqlSessionFactoryBean.setMapperLocations(resourcePatternResolver.getResources(mapperLocations));
 
             org.apache.ibatis.session.Configuration configuration = sqlSessionFactoryBean.getObject().getConfiguration();
-            configuration.setMapUnderscoreToCamelCase(mapUnderscoreToCamelCase); //设置驼峰匹配规则
+            //设置驼峰匹配规则
+            configuration.setMapUnderscoreToCamelCase(mapUnderscoreToCamelCase);
             sqlSessionFactoryBean.setConfiguration(configuration);
 
         } catch (Exception e) {

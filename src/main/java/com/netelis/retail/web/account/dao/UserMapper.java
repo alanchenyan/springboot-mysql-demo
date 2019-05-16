@@ -14,9 +14,24 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
     int insertUser(User user);
 
+    /**
+     * 查询用户
+     * @param userSearch
+     * @return
+     */
     List findUser(UserSearch userSearch);
 
+    /**
+     * 获取单个用户
+     * @param keyId
+     * @return
+     */
     User getOneUser(String keyId);
 }

@@ -41,14 +41,14 @@ public class CommonStatementController {
         commonServiceImpl.update(statementEditVO.getStatement(), statementEditVO.getEntity());
     }
 
-    @ApiOperation("调用disable数据接口")
+    @ApiOperation("调用disable(逻辑删除)数据接口")
     @PutMapping("/disable/{statement}/{keyId}")
     public void disableById(@PathVariable String statement, @PathVariable String keyId) {
         logger.debug("commonstatement disableById.............statement:" + statement+"  keyId:"+keyId);
         commonServiceImpl.disableById(statement, keyId);
     }
 
-    @ApiOperation("调用disable数据接口")
+    @ApiOperation("调用disable(逻辑删除)数据接口")
     @PutMapping("/disable")
     public void disable(@RequestBody StatementEditVO statementEditVO) {
         logger.debug("commonstatement disable.............statementEditVO:" + statementEditVO);

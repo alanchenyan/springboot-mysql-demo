@@ -19,6 +19,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfig {
 
+    /**
+     *
+     * @return
+     */
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -27,7 +31,11 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build();
     }
-    // 一些接口文档信息的简介
+
+    /**
+     * 一些接口文档信息的简介
+     * @return
+     */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
