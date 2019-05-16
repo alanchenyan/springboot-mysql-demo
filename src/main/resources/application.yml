@@ -1,3 +1,5 @@
+
+#server配置
 server:
   port: 8080
 
@@ -9,7 +11,16 @@ spring:
      password: retail_PWD_123
      driver-class-name: com.mysql.jdbc.Driver
 
+#mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml #指定mybatis映射文件的地址
   configuration:
     map-underscore-to-camel-case: true  #开启驼峰映射的设置
+
+#log日志配置
+logging:
+  level:
+    root: WARN
+    com:
+      netelis:
+        retail: DEBUG  #配置日志输出级别
