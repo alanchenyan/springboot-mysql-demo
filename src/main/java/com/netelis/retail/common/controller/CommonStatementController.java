@@ -24,8 +24,8 @@ public class CommonStatementController {
     @Autowired
     ICommonStatementService CommonServiceImpl;
 
-    @GetMapping("/list")
-    public List list(String statement, String parameter) {
+    @GetMapping("/{statement}/{parameter}")
+    public List list(@PathVariable String statement, @PathVariable Object parameter) {
         logger.debug("commonstatement list............." + statement + "  " + parameter);
         return CommonServiceImpl.selectList(statement, parameter);
     }
@@ -49,15 +49,15 @@ public class CommonStatementController {
     }
 
 
-    @DeleteMapping
-    public void deleteById(String statement, Long id) {
+    @DeleteMapping("/{statement}/{id}")
+    public void deleteById(@PathVariable String statement, @PathVariable Long id) {
         logger.debug("commonstatement deleteById............." + id);
         CommonServiceImpl.deleteById(statement, id);
     }
 
-//    @DeleteMapping
-//    public void delete(@RequestBody StatementEditVO statementEditVO) {
-//        logger.debug("commonstatement delete............." + statementEditVO);
-//        CommonServiceImpl.delete(statementEditVO.getStatement(), statementEditVO.getEntity());
-//    }
+    @DeleteMapping
+    public void delete(@RequestBody StatementEditVO statementEditVO) {
+        logger.debug("commonstatement delete............." + statementEditVO);
+        CommonServiceImpl.delete(statementEditVO.getStatement(), statementEditVO.getEntity());
+    }
 }

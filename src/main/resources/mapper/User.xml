@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.netelis.retail.web.account.dao.UserDao">
+
     <select id="findUser" parameterType="com.netelis.retail.web.account.search.UserSearch"
             resultType="com.netelis.retail.entiy.User">
         select * from t_user
@@ -26,8 +27,12 @@
         update t_user set user_name=#{userName},password=#{password},phone=#{phone} where id=#{id}
     </update>
 
-    <delete id="deleteUser" parameterType="Long">
+    <delete id="deleteUser" parameterType="Integer">
         delete from t_user where id=#{id}
+    </delete>
+
+    <delete id="deleteUserByParamter" parameterType="com.netelis.retail.web.account.search.UserSearch">
+        delete from t_user where user_name = #{userName} and phone = #{phone}
     </delete>
 
 </mapper>
