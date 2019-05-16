@@ -35,4 +35,17 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
     public void update(String statement, Object entity){
         commonStatementMapperImpl.update(statement,entity);
     }
+
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void deleteById(String statement, Long id){
+        commonStatementMapperImpl.delete(statement,id);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void delete(String statement, Object entity){
+        commonStatementMapperImpl.delete(statement,entity);
+    }
 }

@@ -26,5 +26,8 @@
         update t_user set user_name=#{userName},password=#{password},phone=#{phone} where id=#{id}
     </update>
 
+    <delete id="deleteUser" parameterType="Long">
+        delete from t_user where id=#{id}
+    </delete>
 
 </mapper>

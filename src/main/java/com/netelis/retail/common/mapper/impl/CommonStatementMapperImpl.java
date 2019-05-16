@@ -83,7 +83,17 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
 
     @Override
     public void delete(String statement, Object entity){
-        
+        SqlSession session = null;
+        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
+        try {
+            session = factory.getObject().openSession();
+            session.delete(statement, entity);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 
 }

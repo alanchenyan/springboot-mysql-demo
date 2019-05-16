@@ -15,6 +15,6 @@ public interface ICommonStatementMapper {
 
     void update(String statement, Object entity);
 
-    void delete(String statement, Object entity);
+    void delete(String statement, Object parameter);
 
 }

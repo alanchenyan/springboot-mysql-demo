@@ -16,4 +16,8 @@ public interface ICommonStatementService {
     Long insert(String statement, Object entity);
 
     void update(String statement, Object entity);
+
+    void deleteById(String statement, Long id);
+
+    void delete(String statement, Object entity);
 }
