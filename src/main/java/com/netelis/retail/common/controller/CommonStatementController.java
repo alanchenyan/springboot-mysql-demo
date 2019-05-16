@@ -37,7 +37,7 @@ public class CommonStatementController {
     }
 
     @PostMapping
-    public Long insert(@RequestBody StatementEditVO statementEditVO) {
+    public String insert(@RequestBody StatementEditVO statementEditVO) {
         logger.debug("commonstatement insert............." + statementEditVO);
         return CommonServiceImpl.insert(statementEditVO.getStatement(), statementEditVO.getEntity());
     }

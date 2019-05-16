@@ -26,7 +26,7 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public Long insert(String statement, Object entity){
+    public String insert(String statement, Object entity){
         return commonStatementMapperImpl.insert(statement,entity);
     }
 

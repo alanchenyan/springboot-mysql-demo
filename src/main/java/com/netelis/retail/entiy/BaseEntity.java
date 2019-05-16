@@ -7,14 +7,13 @@ package com.netelis.retail.entiy;
  */
 public class BaseEntity {
 
-    private Integer id;
+    private String keyId;
 
-
-    public Integer getId() {
-        return id;
+    public String getKeyId() {
+        return keyId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
     }
 }

@@ -39,8 +39,8 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
     }
 
     @Override
-    public Long insert(String statement, Object entity) {
-        Long keyId = null;
+    public String insert(String statement, Object entity) {
+        String keyId = null;
         int affectedRowsNum = 0;
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
@@ -58,8 +58,8 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
             if (entity instanceof LinkedHashMap) {
                 LinkedHashMap beanMap = (LinkedHashMap) entity;
                 Object obj = beanMap.get("id");
-                if (obj != null && obj instanceof Long) {
-                    keyId = (Long) obj;
+                if (obj != null && obj instanceof String) {
+                    keyId = (String) obj;
                 }
             }
         }
