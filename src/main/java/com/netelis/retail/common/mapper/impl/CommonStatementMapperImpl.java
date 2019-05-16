@@ -22,7 +22,7 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
     SqlSessionConfig sqlSessionConfig;
 
     @Override
-    public List selectList(String statement, Object parameter){
+    public List selectList(String statement, Object parameter) {
         List list = null;
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
@@ -39,14 +39,14 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
     }
 
     @Override
-    public Long insert(String statement, Object entity){
+    public Long insert(String statement, Object entity) {
         Long keyId = null;
-        int  affectedRowsNum = 0;
+        int affectedRowsNum = 0;
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
         try {
             session = factory.getObject().openSession();
-            affectedRowsNum = session.insert(statement,entity);
+            affectedRowsNum = session.insert(statement, entity);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,16 +54,36 @@ public class CommonStatementMapperImpl implements ICommonStatementMapper {
             session.close();
         }
 
-        if(affectedRowsNum == 1){
-            if(entity instanceof  LinkedHashMap){
-                LinkedHashMap  beanMap = (LinkedHashMap) entity;
+        if (affectedRowsNum == 1) {
+            if (entity instanceof LinkedHashMap) {
+                LinkedHashMap beanMap = (LinkedHashMap) entity;
                 Object obj = beanMap.get("id");
-                if(obj !=null && obj instanceof Long){
+                if (obj != null && obj instanceof Long) {
                     keyId = (Long) obj;
                 }
             }
         }
         return keyId;
+    }
+
+    @Override
+    public void update(String statement, Object entity) {
+        SqlSession session = null;
+        SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
+        try {
+            session = factory.getObject().openSession();
+            session.update(statement, entity);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public void delete(String statement, Object entity){
+        
     }
 
 }

@@ -13,4 +13,8 @@ public interface ICommonStatementMapper {
 
     Long insert(String statement, Object entity);
 
+    void update(String statement, Object entity);
+
+    void delete(String statement, Object entity);
+
 }

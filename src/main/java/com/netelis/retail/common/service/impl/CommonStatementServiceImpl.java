@@ -29,4 +29,10 @@ public class CommonStatementServiceImpl implements ICommonStatementService {
     public Long insert(String statement, Object entity){
         return commonStatementMapperImpl.insert(statement,entity);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void update(String statement, Object entity){
+        commonStatementMapperImpl.update(statement,entity);
+    }
 }

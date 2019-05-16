@@ -14,4 +14,6 @@ public interface ICommonStatementService {
     List selectList(String statement, Object parameter);
 
     Long insert(String statement, Object entity);
+
+    void update(String statement, Object entity);
 }
