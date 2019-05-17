@@ -27,5 +27,5 @@ logging:
   level:
     root: WARN
     com:
-      netelis:
-        retail: DEBUG  #配置日志输出级别
+      springboot:
+        mysql: DEBUG  #配置日志输出级别

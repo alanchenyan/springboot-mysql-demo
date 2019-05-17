@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.netelis.retail.web.account.mapper.UserMapper">
+<mapper namespace="com.springboot.mysql.web.account.mapper.UserMapper">
 
-    <insert id="insertUser" parameterType="com.netelis.retail.entiy.User">
+    <insert id="insertUser" parameterType="com.springboot.mysql.entiy.User">
 
         <selectKey keyProperty="keyId" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
@@ -12,7 +12,7 @@
 
     </insert>
 
-    <update id="updateUser" parameterType="com.netelis.retail.entiy.User">
+    <update id="updateUser" parameterType="com.springboot.mysql.entiy.User">
         update t_user set user_name=#{userName},password=#{password},phone=#{phone} where key_id=#{keyId}
     </update>
 
@@ -20,7 +20,7 @@
         update t_user set deleted = 1 where key_id =#{keyId}
     </update>
 
-    <update id="disableUserByParamter" parameterType="com.netelis.retail.web.account.search.UserSearch">
+    <update id="disableUserByParamter" parameterType="com.springboot.mysql.web.account.search.UserSearch">
         update t_user set deleted = 1 where user_name = #{userName} and phone = #{phone}
     </update>
 
@@ -28,12 +28,12 @@
         delete from t_user where key_id=#{keyId}
     </delete>
 
-    <delete id="deleteUserByParamter" parameterType="com.netelis.retail.web.account.search.UserSearch">
+    <delete id="deleteUserByParamter" parameterType="com.springboot.mysql.web.account.search.UserSearch">
         delete from t_user where user_name = #{userName} and phone = #{phone}
     </delete>
 
-    <select id="findUser" parameterType="com.netelis.retail.web.account.search.UserSearch"
-            resultType="com.netelis.retail.entiy.User">
+    <select id="findUser" parameterType="com.springboot.mysql.web.account.search.UserSearch"
+            resultType="com.springboot.mysql.entiy.User">
         select * from t_user
         <where>
             <if test="userName != null">
@@ -45,11 +45,11 @@
         </where>
     </select>
 
-    <select id="findLoginByName" parameterType="String" resultType="com.netelis.retail.entiy.User">
+    <select id="findLoginByName" parameterType="String" resultType="com.springboot.mysql.entiy.User">
         select user_name,password from t_user where user_name = #{parameter}
     </select>
 
-    <select id="getOneUser" parameterType="String" resultType="com.netelis.retail.entiy.User">
+    <select id="getOneUser" parameterType="String" resultType="com.springboot.mysql.entiy.User">
         select * from t_user where key_id = #{keyId}
     </select>
 
