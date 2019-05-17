@@ -7,7 +7,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * 跨域请求
+ * @author Alan Chen
+ * @description 跨域请求
+ * @date 2019/5/15
  */
 @Configuration
 @EnableWebMvc

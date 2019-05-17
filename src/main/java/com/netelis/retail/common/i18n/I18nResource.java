@@ -17,7 +17,7 @@ import java.util.Locale;
 public class I18nResource {
 
     protected ResourceBundleMessageSource resourceBundleMessageSource;
-    private Object objs[] = { "language" };
+    private Object[] objs = { "language" };
 
     protected I18nResource(String path) {
         resourceBundleMessageSource = new ResourceBundleMessageSource();
