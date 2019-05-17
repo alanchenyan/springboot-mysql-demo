@@ -50,7 +50,7 @@
     </select>
 
     <select id="getOneUser" parameterType="String" resultType="com.netelis.retail.entiy.User">
-        select * from t_user where key_id2 = #{keyId}
+        select * from t_user where key_id = #{keyId}
     </select>
 
 </mapper>
