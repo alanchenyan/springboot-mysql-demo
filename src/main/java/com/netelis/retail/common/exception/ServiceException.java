@@ -5,7 +5,7 @@ import com.netelis.retail.common.i18n.I18nMessage;
 
 /**
  * @author Alan Chen
- * @description
+ * @description 业务异常
  * @date 2019/4/1
  */
 public class ServiceException extends RuntimeException {

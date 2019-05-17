@@ -1,5 +1,6 @@
 package com.netelis.retail.common.handler;
 
+import com.netelis.retail.common.exception.DatabaseException;
 import com.netelis.retail.common.exception.ServiceException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -58,6 +59,17 @@ public class CommonExceptionHandler {
     @ResponseBody
     public ResponseMessage exceptionHandler(DataIntegrityViolationException e){
         return new ResponseMessage("DataIntegrityViolationException",e.getMessage());
+    }
+
+    /**
+     * 数据库异常
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(DatabaseException.class)
+    @ResponseBody
+    public ResponseMessage exceptionHandler(DatabaseException e){
+        return new ResponseMessage("DatabaseException",e.getMessage());
     }
 
 
