@@ -33,4 +33,11 @@ public interface IUserService {
      */
     User getOneUser(String keyId);
 
+    /**
+     * 获取单个用户
+     * @param keyId
+     * @return
+     */
+    User getOneUserByRpc(String keyId);
+
 }

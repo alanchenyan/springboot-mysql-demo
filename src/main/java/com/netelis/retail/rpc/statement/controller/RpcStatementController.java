@@ -44,7 +44,7 @@ public class RpcStatementController {
     @ApiOperation("调用disable(逻辑删除)数据接口")
     @PutMapping("/disable/{statement}/{keyId}")
     public void disableById(@PathVariable String statement, @PathVariable String keyId) {
-        logger.debug("commonstatement disableById.............statement:" + statement+"  keyId:"+keyId);
+        logger.debug("commonstatement disableById.............statement:" + statement + "  keyId:" + keyId);
         rpcStatementServiceImpl.disableById(statement, keyId);
     }
 
@@ -58,7 +58,7 @@ public class RpcStatementController {
     @ApiOperation("调用物理删除数据接口")
     @DeleteMapping("/{statement}/{keyId}")
     public void deleteById(@PathVariable String statement, @PathVariable String keyId) {
-        logger.debug("commonstatement deleteById.............statement:" + statement+"  keyId:"+keyId);
+        logger.debug("commonstatement deleteById.............statement:" + statement + "  keyId:" + keyId);
         rpcStatementServiceImpl.deleteById(statement, keyId);
     }
 
@@ -72,7 +72,7 @@ public class RpcStatementController {
     @ApiOperation("调用数据列表接口")
     @GetMapping("/list/{statement}/{parameter}")
     public List list(@PathVariable String statement, @PathVariable Object parameter) {
-        logger.debug("commonstatement getOneById.............statement:" + statement+"  parameter:"+parameter);
+        logger.debug("commonstatement getOneById.............statement:" + statement + "  parameter:" + parameter);
         return rpcStatementServiceImpl.selectList(statement, parameter);
     }
 
@@ -86,7 +86,7 @@ public class RpcStatementController {
     @ApiOperation("调用数据项接口")
     @GetMapping("/{statement}/{keyId}")
     public Object getOneById(@PathVariable String statement, @PathVariable String keyId) {
-        logger.debug("commonstatement getOneById.............statement:" + statement+"  keyId:"+keyId);
+        logger.debug("commonstatement getOneById.............statement:" + statement + "  keyId:" + keyId);
         return rpcStatementServiceImpl.selectOne(statement, keyId);
     }
 }

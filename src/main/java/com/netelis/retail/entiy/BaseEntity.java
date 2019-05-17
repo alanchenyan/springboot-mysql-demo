@@ -9,12 +9,16 @@ import java.sql.Timestamp;
  */
 public class BaseEntity {
 
+    //uuid
     private String keyId;
 
+    //逻辑删除标志：0：未删除；1：删除 默认值为0
     private int deleted;
 
+    //数据创建时间 默认值为当前时间
     private Timestamp createTime;
 
+    //数据修改时间 默认值为当前时间
     private Timestamp updateTime;
 
     public String getKeyId() {
