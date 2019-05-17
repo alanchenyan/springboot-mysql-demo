@@ -7,12 +7,28 @@ package com.netelis.retail.common.i18n;
  */
 public interface I18nMessage {
 
+    /**
+     * 描述信息
+     * @return
+     */
     String getMessageCode();
 
+    /**
+     * 国际化key
+     * @return
+     */
     String getI18nKey();
 
+    /**
+     * 国际化文件路径
+     * @return
+     */
     String getI18nResourcePath();
 
+    /**
+     * 获取描述信息
+     * @return
+     */
     default String getMessage(){
         String messageI18n = "";
         try {
