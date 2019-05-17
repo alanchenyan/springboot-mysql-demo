@@ -66,8 +66,8 @@ public class CommonExceptionHandler {
      * @param e
      * @return
      */
-    //@ExceptionHandler(Exception.class)
-   // @ResponseBody
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
     public ResponseMessage exceptionHandler(Exception e){
         return new ResponseMessage("Exception",e.getMessage());
     }

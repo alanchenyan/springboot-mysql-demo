@@ -5,6 +5,7 @@ import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -32,5 +33,10 @@ public class UserController {
     @GetMapping("/{keyId}")
     public User getOneUser(@PathVariable String keyId) {
         return userServiceImpl.getOneUser(keyId);
+    }
+
+    @GetMapping("/rpc/{keyId}")
+    public User getOneUserByRpc(@PathVariable String keyId) {
+        return userServiceImpl.getOneUserByRpc(keyId);
     }
 }

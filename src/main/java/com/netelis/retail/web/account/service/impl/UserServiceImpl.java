@@ -2,7 +2,7 @@ package com.netelis.retail.web.account.service.impl;
 
 import com.netelis.retail.entiy.User;
 import com.netelis.retail.rpc.statement.mapper.IRpcStatementMapper;
-import com.netelis.retail.web.account.dao.UserMapper;
+import com.netelis.retail.web.account.mapper.UserMapper;
 import com.netelis.retail.web.account.search.UserSearch;
 import com.netelis.retail.web.account.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User getOneUser(String keyId){
-        return (User)rpcStatementMapperImpl.selectOne("getOneUser",keyId);
+    public User getOneUser(String keyId) {
+        return userMapper.getOneUser(keyId);
+    }
+
+    @Override
+    public User getOneUserByRpc(String keyId) {
+        return (User) rpcStatementMapperImpl.selectOne("getOneUser", keyId);
     }
 }

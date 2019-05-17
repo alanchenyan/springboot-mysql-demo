@@ -1,4 +1,4 @@
-package com.netelis.retail.web.account.dao;
+package com.netelis.retail.web.account.mapper;
 
 import com.netelis.retail.entiy.User;
 import com.netelis.retail.web.account.search.UserSearch;
@@ -16,6 +16,7 @@ public interface UserMapper {
 
     /**
      * 新增用户
+     *
      * @param user
      * @return
      */
@@ -23,6 +24,7 @@ public interface UserMapper {
 
     /**
      * 查询用户
+     *
      * @param userSearch
      * @return
      */
@@ -30,6 +32,7 @@ public interface UserMapper {
 
     /**
      * 获取单个用户
+     *
      * @param keyId
      * @return
      */

@@ -22,53 +22,52 @@ public class RpcStatementServiceImpl implements IRpcStatementService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public String insert(String statement, Object entity){
-        return rpcStatementMapperImpl.insert(statement,entity);
+    public String insert(String statement, Object entity) {
+        return rpcStatementMapperImpl.insert(statement, entity);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void update(String statement, Object entity){
-        rpcStatementMapperImpl.update(statement,entity);
+    public void update(String statement, Object entity) {
+        rpcStatementMapperImpl.update(statement, entity);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void disableById(String statement, String keyId){
-        rpcStatementMapperImpl.update(statement,keyId);
+    public void disableById(String statement, String keyId) {
+        rpcStatementMapperImpl.update(statement, keyId);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void disable(String statement, Object parameter){
-        rpcStatementMapperImpl.update(statement,parameter);
+    public void disable(String statement, Object parameter) {
+        rpcStatementMapperImpl.update(statement, parameter);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void deleteById(String statement, String keyId){
-        rpcStatementMapperImpl.delete(statement,keyId);
+    public void deleteById(String statement, String keyId) {
+        rpcStatementMapperImpl.delete(statement, keyId);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void delete(String statement, Object parameter){
-        rpcStatementMapperImpl.delete(statement,parameter);
-    }
-
-
-    @Override
-    public List selectList(String statement, Object parameter){
-        return rpcStatementMapperImpl.selectList(statement,parameter);
+    public void delete(String statement, Object parameter) {
+        rpcStatementMapperImpl.delete(statement, parameter);
     }
 
     @Override
-    public Object selectOne(String statement, Object parameter){
-        return rpcStatementMapperImpl.selectOne(statement,parameter);
+    public List selectList(String statement, Object parameter) {
+        return rpcStatementMapperImpl.selectList(statement, parameter);
     }
 
     @Override
-    public Object selectOne(String statement, String keyId){
-        return rpcStatementMapperImpl.selectOne(statement,keyId);
+    public Object selectOne(String statement, Object parameter) {
+        return rpcStatementMapperImpl.selectOne(statement, parameter);
+    }
+
+    @Override
+    public Object selectOne(String statement, String keyId) {
+        return rpcStatementMapperImpl.selectOne(statement, keyId);
     }
 }

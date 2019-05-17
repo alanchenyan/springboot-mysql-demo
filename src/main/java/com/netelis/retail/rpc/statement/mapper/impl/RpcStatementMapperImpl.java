@@ -1,11 +1,11 @@
 package com.netelis.retail.rpc.statement.mapper.impl;
 
 import com.netelis.retail.config.sqlsession.SqlSessionConfig;
+import com.netelis.retail.rpc.statement.mapper.IRpcStatementMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.netelis.retail.rpc.statement.mapper.IRpcStatementMapper;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -65,7 +65,7 @@ public class RpcStatementMapperImpl implements IRpcStatementMapper {
     }
 
     @Override
-    public void delete(String statement, Object entity){
+    public void delete(String statement, Object entity) {
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
         try {
@@ -98,7 +98,7 @@ public class RpcStatementMapperImpl implements IRpcStatementMapper {
     }
 
     @Override
-    public Object selectOne(String statement, Object parameter){
+    public Object selectOne(String statement, Object parameter) {
         Object result = null;
         SqlSession session = null;
         SqlSessionFactoryBean factory = sqlSessionConfig.createSqlSessionFactory();
